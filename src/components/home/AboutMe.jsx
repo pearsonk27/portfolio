@@ -7,7 +7,7 @@ const pictureLinkRegex = new RegExp(
   /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
 );
 
-const AboutMe = ({ heading, message, link, imgSize, resume }) => {
+const AboutMe = ({ heading, message, link, imgWidth, imgHeight, resume }) => {
   const [profilePicUrl, setProfilePicUrl] = React.useState("");
   const [showPic, setShowPic] = React.useState(Boolean(link));
   // https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
@@ -42,8 +42,8 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
               className="border border-secondary rounded-circle"
               src={profilePicUrl}
               alt="profilepicture"
-              width={imgSize}
-              height={imgSize}
+              width={imgWidth}
+              height={imgHeight}
             />
           )}
         </div>
