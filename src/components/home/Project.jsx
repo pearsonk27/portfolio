@@ -17,7 +17,7 @@ const API = "https://api.github.com";
 // const gitHubQuery = "/repos?sort=updated&direction=desc";
 // const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
-const Project = ({ heading, username, length, specfic }) => {
+const Project = ({ heading, username, length, specfic, emojiMap }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
   const specficReposAPI = `${API}/repos/${username}`;
   const dummyProjectsArr = new Array(length + specfic.length).fill(
@@ -65,6 +65,7 @@ const Project = ({ heading, username, length, specfic }) => {
                 key={`project-card-${index}`}
                 id={`project-card-${index}`}
                 value={project}
+                emojiMap={emojiMap}
               />
             ))
             : dummyProjectsArr.map((project, index) => (
@@ -72,6 +73,7 @@ const Project = ({ heading, username, length, specfic }) => {
                 key={`dummy-${index}`}
                 id={`dummy-${index}`}
                 value={project}
+                emojiMap={emojiMap}
               />
             ))}
         </Row>

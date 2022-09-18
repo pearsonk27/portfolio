@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 
-const ProjectCard = ({ value }) => {
+const ProjectCard = ({ value, emojiMap }) => {
   const {
     name,
     description,
@@ -13,12 +13,21 @@ const ProjectCard = ({ value }) => {
     languages_url,
     pushed_at,
   } = value;
+
+  const escape = s => s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+
+  const pattern = new RegExp(
+    Object.keys(emojiMap).map(escape).join('|'),
+    'g'
+  );
+  const convertedDescription = (!description) ? "" : description.replace(pattern, match => emojiMap[match]) || <Skeleton count={3} />;
+
   return (
     <Col md={6}>
       <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
-          <Card.Text>{(!description) ? "" : description || <Skeleton count={3} />} </Card.Text>
+          <Card.Text>{convertedDescription} </Card.Text>
           {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
           <hr />
           {languages_url ? (

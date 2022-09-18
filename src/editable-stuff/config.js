@@ -68,6 +68,12 @@ const repos = {
   specificRepos: [],
 };
 
+// emojiMap
+const emojiMap = {
+  ':)': '😊',
+  ':necktie:': '👔',
+}
+
 // Leadership SECTION
 const leadership = {
   show: false,
@@ -149,4 +155,4 @@ const experiences = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences };
+export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences, emojiMap };
