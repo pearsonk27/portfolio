@@ -16,6 +16,10 @@ const mainBody = {
       url: "https://github.com/pearsonk27",
     },
     {
+      image: "fa-gitlab",
+      url: "https://gitlab.com/pearsonk27",
+    },
+    {
       image: "fa-facebook",
       url: "https://www.facebook.com/kris.pearson.73",
     },
@@ -51,7 +55,7 @@ const about = {
   imageWidth: 330,
   imageHeight: 462,
   message:
-    "My name is Kris Pearson. My long term goal is to make a valuable change in the world. My short term goal is to have fun. I am an open-minded, easily-likable, technically-gifted professional who loves working with big data.",
+    "My name is Kris Pearson. My long term goal is to make a valuable change in the world. My short term goal is to have fun. I am an open-minded, easily-likable, technically-gifted professional who loves working on tough problems.",
   resume: "https://github.com/pearsonk27/latexcv/raw/master/sidebarleft/main.pdf",
 };
 
